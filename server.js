@@ -20,6 +20,22 @@ app.get('/', function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
+app.get('/projects', function(req, res) {
+  res.sendFile(process.cwd() + "/views/projects.html");
+});
+
+app.get('/repos', function(req, res) {
+  res.sendFile(process.cwd() + "/views/repos.html");
+});
+
+app.get('/blog', function(req, res) {
+  res.sendFile(process.cwd() + "/views/blog.html");
+});
+
+app.get('/formContactMe', function(req, res) {
+  res.sendFile(process.cwd() + "/views/formContactMe.html");
+});
+
 app.get('/login', function(req, res) {
   res.sendFile(process.cwd() + "/views/login.html");
 });
