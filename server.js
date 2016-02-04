@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var app = express();
-//var middleware = require (./middleware.js);
+var middleware = require('./jscripts/middleware.js');
 var PORT = 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -42,6 +42,28 @@ app.get('/formContactMe', function(req, res) {
 
 app.get('/login', function(req, res) {
   res.sendFile(process.cwd() + "/views/login.html");
+});
+
+app.get('/logout', function(req, res) {
+  res.sendFile(process.cwd() + "/views/home.html");
+});
+
+app.get('/account', middleware.isAuthenticated, function(req, res) {
+  res.sendFile(process.cwd() + "/views/account.html");
+});
+
+app.post("/login", function(req, res) {
+  if (req.body.email1 === "a@a.com" && req.body.password1 === "a") {
+    req.session.isAuthenticated = true;
+    var loggedInTime = parseInt(req.body.loginTime);
+    if (loggedInTime > 0) {
+      req.session.maxAge = loggedInTime * 1000;
+    }
+    res.redirect('/account');
+  } else {
+    req.session.isAuthenticated = false;
+    res.redirect('/login');
+  }
 });
 
 app.listen(PORT, function() {
