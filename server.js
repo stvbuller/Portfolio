@@ -7,4 +7,23 @@ var PORT = 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(session)
+app.use(session({
+  secret: 'abc',
+  cookie: {
+    maxAge: 60000
+  },
+  saveUninitialized: true,
+  resave: false
+}));
+
+app.get('/', function(req, res) {
+  res.sendFile(process.cwd() + "/views/home.html");
+});
+
+app.get('/login', function(req, res) {
+  res.sendFile(process.cwd() + "/views/login.html");
+});
+
+app.listen(PORT, function() {
+  console.log("App is listening on port %s", PORT);
+});
