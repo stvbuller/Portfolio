@@ -16,6 +16,10 @@ app.use(session({
   resave: false
 }));
 
+//serves the image and jscript resoure files
+app.use(express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/jscripts'));
+
 app.get('/', function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
 });
