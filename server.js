@@ -16,7 +16,7 @@ app.use(session({
   resave: false
 }));
 
-//serves the image and jscript resoure files
+//serves the image, jscript, and css resoure files
 app.use(express.static(__dirname + '/images'));
 app.use(express.static(__dirname + '/jscripts'));
 app.use(express.static(__dirname + '/css_sheets'));
