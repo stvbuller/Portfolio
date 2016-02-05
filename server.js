@@ -19,6 +19,10 @@ app.use(session({
 //serves the image and jscript resoure files
 app.use(express.static(__dirname + '/images'));
 app.use(express.static(__dirname + '/jscripts'));
+app.use(express.static(__dirname + '/css_sheets'));
+app.use(express.static(__dirname + '/imagesClickGame'));
+app.use(express.static(__dirname + '/jscriptsClickGame'));
+app.use(express.static(__dirname + '/cssClickGame'));
 
 app.get('/', function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
@@ -50,6 +54,10 @@ app.get('/logout', function(req, res) {
 
 app.get('/account', middleware.isAuthenticated, function(req, res) {
   res.sendFile(process.cwd() + "/views/account.html");
+});
+
+app.get('/clickGame', function(req, res) {
+  res.sendFile(process.cwd() + "/views/clickGame.html");
 });
 
 app.post("/login", function(req, res) {
