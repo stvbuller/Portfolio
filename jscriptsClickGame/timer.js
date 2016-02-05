@@ -6,7 +6,8 @@ var checkTimer;
 setTimeout(function(){
   if(secondsCounter === 0) {
     clearInterval(timerInterval);
-    alert("You have 20 seconds to play after pressing start!");
+    //alert("You have 20 seconds to play after pressing start!");
+    $("#modalStart").modal('show');
   }
 }, 500);
 
@@ -24,13 +25,16 @@ function toggleStartStop() {
     checkTimer = setInterval(checkSecondsCounter, 1000);
     for(var i = 0; i < imagesClassmates.length; i++) {
       imagesClassmates[i].setAttribute("data-state", "notclicked");
+      imagesClassmates[i].setAttribute("style", "border-color: white");
     }
   } else {
     this.innerHTML = "Start";
     this.setAttribute("data-state", "start");
     clearInterval(timerInterval);
     clearInterval(checkTimer);
-    alert("You stopped after " + secondsCounter + " seconds")
+    //alert("You stopped after " + secondsCounter + " seconds")
+    $("#buttonsClickedStop").html(imageCounter);
+    $("#stopGameModel").modal('show');
   }
 }
 
@@ -42,7 +46,10 @@ function checkSecondsCounter() {
     startStopBtn.setAttribute("data-state", "start");
     clearInterval(timerInterval); 
     clearInterval(checkTimer);
-    alert("Time is up " + secondsCounter + " seconds, you clicked " + imageCounter + " images");
+    //alert("Time is up " + secondsCounter + " seconds, you clicked " + imageCounter + " images");
+    $("#buttonsClicked").html(imageCounter);
+    $("#endGameModel").modal('show');
+
   } 
 }
 

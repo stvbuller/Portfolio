@@ -128,18 +128,89 @@
             </div> 
           </div>
     </div>
-    <div class="row col-md-2"></div>
-    <div class="row col-md-10">
-      <br>
-      <br>
-      <br>
-      <nav>
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/formContactMe">Contact Me</a></li>
-      </nav>
-    </div>
   </div>
+  <!-- Model shown when the page loads -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modalStart">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Let's Go!!</h4>
+        </div>
+        <div class="modal-body">
+          <img alt="an image appears here" src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAYCAAAAJDI3MTYxMmI5LWQ3OGUtNDk4Zi04YjMwLWI1NmNjZGFjMTFhMw.jpg">
+          <p>You have 20 seconds to play after pressing start!.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog --> 
+  </div><!-- /.modal --> 
+<!-- Modal to signal that a button has already been clicked -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="clickedModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Oh No!</h4>
+        </div>
+        <div class="modal-body">
+          <p>You've clicked this one already!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<!-- Model to signal that the user stoped the game -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="stopGameModel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">You Stopped!</h4>
+        </div>
+        <div class="modal-body">
+          <p>You clicked</p>
+          <label id="buttonsClickedStop"></label>
+          <p>buttons</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<!-- Model to signal the end of the game because 20 seconds is up -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="endGameModel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Well Done!</h4>
+        </div>
+        <div class="modal-body">
+          <p>20 Seconds is up, you clicked</p>
+          <label id="buttonsClicked"></label>
+          <p>buttons</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+
+
+<!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<!-- Local JavaScript -->
   <script type="text/javascript" src="/countImages.js"></script>
   <script type="text/javascript" src="/timer.js"></script>
 </body>
