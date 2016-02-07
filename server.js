@@ -16,7 +16,6 @@ app.use(session({
   resave: false
 }));
 
-//*** move to a public folder
 //serves the image, jscript, and css resoure files
 app.use(express.static(__dirname + '/public/images'));
 app.use(express.static(__dirname + '/public/jscripts'));
@@ -50,6 +49,7 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/logout', function(req, res) {
+  req.session.isAuthenticated = false;
   res.sendFile(process.cwd() + "/views/home.html");
 });
 
@@ -57,12 +57,16 @@ app.get('/account', middleware.isAuthenticated, function(req, res) {
   res.sendFile(process.cwd() + "/views/account.html");
 });
 
+app.get('/account/:userName', function(req, res) {
+  res.redirect('/login');
+});
+
 app.get('/clickGame', function(req, res) {
   res.sendFile(process.cwd() + "/views/clickGame.html");
 });
 
 app.post("/login", function(req, res) {
-  if (req.body.email1 === "a@a.com" && req.body.password1 === "a") {
+  if (req.body.email1 === "b@b.com" && req.body.password1 === "b") {
     req.session.isAuthenticated = true;
     var loggedInTime = parseInt(req.body.loginTime);
     if (loggedInTime > 0) {
