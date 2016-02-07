@@ -2,8 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var app = express();
-var middleware = require('./jscripts/middleware.js');
-var PORT = 3000;
+var middleware = require('./public/jscripts/middleware.js');
+var PORT = process.env.PORT || 8090;
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -16,13 +16,14 @@ app.use(session({
   resave: false
 }));
 
+//*** move to a public folder
 //serves the image, jscript, and css resoure files
-app.use(express.static(__dirname + '/images'));
-app.use(express.static(__dirname + '/jscripts'));
-app.use(express.static(__dirname + '/css_sheets'));
-app.use(express.static(__dirname + '/imagesClickGame'));
-app.use(express.static(__dirname + '/jscriptsClickGame'));
-app.use(express.static(__dirname + '/cssClickGame'));
+app.use(express.static(__dirname + '/public/images'));
+app.use(express.static(__dirname + '/public/jscripts'));
+app.use(express.static(__dirname + '/public/css_sheets'));
+app.use(express.static(__dirname + '/public/imagesClickGame'));
+app.use(express.static(__dirname + '/public/jscriptsClickGame'));
+app.use(express.static(__dirname + '/public/cssClickGame'));
 
 app.get('/', function(req, res) {
   res.sendFile(process.cwd() + "/views/home.html");
