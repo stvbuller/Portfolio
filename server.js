@@ -20,7 +20,7 @@ app.use(session({
 app.use(express.static(__dirname + '/public/images'));
 app.use(express.static(__dirname + '/public/jscripts'));
 app.use(express.static(__dirname + '/public/css_sheets'));
-app.use(express.static(__dirname + '/public/imagesClickGame'));
+//app.use(express.static(__dirname + '/public/imagesClickGame'));
 //app.use(express.static(__dirname + '/public/jscriptsClickGame'));
 app.use(express.static(__dirname + '/public/cssClickGame'));
 
