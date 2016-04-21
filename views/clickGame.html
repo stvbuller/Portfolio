@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/cerulean/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/baseClick.css">
   <title>Click Your Friends</title>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Steven Buller</a>
+      </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/repos">Repos</a></li>
+        </ul>
+    </div><!-- /.container-fluid for navbar-->
+  </nav>
   <div class="container">
     <div class="row">
       <header class="col-md-12" >
@@ -17,15 +29,15 @@
       <div class="col-md-12">
         <div class="col-md-1"></div>
         <div class="col-md-2">
-          <img src="/buller.jpg" class="img-thumbnail" alt="missing image" 
+          <img src="/buller.jpg" class="img-thumbnail" alt="missing image"
             data-state="notclicked">
         </div>
         <div class="col-md-2">
-          <img src="/christian.jpg" class="img-thumbnail" alt="missing image" 
+          <img src="/christian.jpg" class="img-thumbnail" alt="missing image"
             data-state="notclicked">
         </div>
         <div class="col-md-2">
-          <img src="/carolyn.jpg" class="img-thumbnail" alt="missing image" 
+          <img src="/carolyn.jpg" class="img-thumbnail" alt="missing image"
             data-state="notclicked">
         </div>
         <div class="col-md-2">
@@ -37,7 +49,7 @@
             data-state="notclicked">
         </div>
         <div class="col-md-1"></div>
-      </div> 
+      </div>
     </div>
     <div class="row"><!--beginning of second row-->
       <div class="col-md-12">
@@ -63,7 +75,7 @@
             data-state="notclicked">
         </div>
         <div class="col-md-1"></div>
-      </div> 
+      </div>
     </div>
     <div class="row"><!--beginning of third row-->
       <div class="col-md-12">
@@ -89,7 +101,7 @@
             data-state="notclicked">
         </div>
         <div class="col-md-1"></div>
-      </div> 
+      </div>
     </div>
     <div class="row"><!--beginning of fourth row-->
       <div class="col-md-12">
@@ -115,33 +127,20 @@
             data-state="notclicked">
         </div>
         <div class="col-md-1"></div>
-      </div> 
-    </div>  
+      </div>
+    </div>
     <div class="col-md-12">
       <br>
     </div>
     <div class="row">
           <div class="col-md-12">
             <div class="col-md-10 col-md-offset-1">
-              <button type="button" class="btn btn-primary  btn-block" id="startStopBtn" 
-              data-state="start">Start</button> 
-            </div> 
+              <button type="button" class="btn btn-primary  btn-block" id="startStopBtn"
+              data-state="start">Start</button>
+            </div>
           </div>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-10">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/formContactMe">Contact me</a></li>
-      </ul>
-    </div>
-  </div>
-
   <!-- Model shown when the page loads -->
   <div class="modal fade" tabindex="-1" role="dialog" id="modalStart">
     <div class="modal-dialog">
@@ -158,8 +157,8 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog --> 
-  </div><!-- /.modal --> 
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 <!-- Modal to signal that a button has already been clicked -->
   <div class="modal fade" tabindex="-1" role="dialog" id="clickedModal">
     <div class="modal-dialog">
